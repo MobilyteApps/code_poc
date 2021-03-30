@@ -1,4 +1,4 @@
-# aman-code-challenge
+# code-Poc
 ## 1. create an android app (use kotlin)
 - display a google map with "google places" working search input.
 - display marker on the map when you select a search result. 
