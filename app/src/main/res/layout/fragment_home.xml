@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--region Data-->
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.android.code.app.ui.home.HomeViewModel" />
+
+    </data>
+    <!--endregion-->
+
+    <!--region Parent Layout-->
+    <RelativeLayout
+        android:id="@+id/coLayoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        <!--region Map View-->
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--endregion-->
+
+        <!--region Autocomplete Place Picker-->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:visibility="@{viewModel.enableControllers ? View.VISIBLE : View.GONE , default = gone}"
+            app:cardElevation="2dp">
+
+            <fragment
+                android:id="@+id/autocomplete_fragment"
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+        <!--endregion-->
+
+
+        <!--region User Current Location-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_current_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:onClick="@{() -> viewModel.onClickCurrentLocation()}"
+            android:background="@android:color/white"
+            android:backgroundTint="@android:color/white"
+            android:src="@drawable/ic_current_location"
+            android:visibility="@{viewModel.enableControllers ? View.VISIBLE : View.GONE , default = gone}"
+            app:fabSize="normal"
+            tools:ignore="UnusedAttribute" />
+        <!--endregion-->
+
+        <!--region Loader-->
+        <include
+            android:id="@+id/include_layout_loader"
+            layout="@layout/layout_loader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewModel.getLoading() ? View.VISIBLE : View.GONE , default = gone}" />
+        <!--endregion-->
+
+        <!--region Error-->
+        <include
+            android:id="@+id/include_layout_error"
+            layout="@layout/layout_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewModel.error ? View.VISIBLE : View.GONE , default = gone}"
+            app:message="@{viewModel.errorMessage}" />
+        <!--endregion-->
+
+    </RelativeLayout>
+    <!--endregion-->
+</layout>

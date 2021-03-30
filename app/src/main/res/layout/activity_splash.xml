@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--region Data-->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.android.code.app.ui.splash.SplashViewModel" />
+    </data>
+    <!--endregion-->
+
+    <!--region Main Parent-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/splashBackgroundColor">
+
+        <!--region Logo View-->
+        <ImageView
+            android:id="@+id/gif_splash"
+            android:background="@drawable/ic_app_logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/cd_logo_image" />
+        <!--endregion-->
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:text="@string/splash_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <!--endregion-->
+</layout>

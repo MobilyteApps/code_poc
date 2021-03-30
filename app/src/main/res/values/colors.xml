@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="splashBackgroundColor">#71D2FD</color>
+    <color name="loaderBackground">#50000000</color>
+    <!--region Base Color-->
+    <color name="gray_303030">#303030</color>
+    <color name="gray_c2c2c2">#C2C2C2</color>
+    <color name="gray_acacac">#ACACAC</color>
+    <color name="gray_e5e5e5">#E5E5E5</color>
+    <color name="black">#000000</color>
+    <color name="blue">#2D8CFF</color>
+    <color name="white">#ffffff</color>
+    <!--endregion-->
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.android.code.app.ui.dashboard.DashboardViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_dashboard_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--region Container-->
+        <FrameLayout
+            android:id="@+id/fl_dashboard_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--endregion-->
+    </RelativeLayout>
+</layout>
+

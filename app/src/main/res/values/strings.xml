@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CodeChallenge</string>
+    <string name="cd_logo_image">Logo Image</string>
+    <string name="splash_footer">Code</string>
+
+    <!--region Errors/Message-->
+    <string name="press_once_more">Press once more to exit</string>
+    <string name="data_not_available">Data not available.</string>
+    <string name="internet_not_working">Internet not working.</string>
+    <string name="something_went_wrong">Something went wrong.</string>
+    <string name="api_key_required">Api key is required.Kindly add google api key</string>
+    <string name="dialog_btn_ok">OK</string>
+    <string name="dialog_msg_radius">Area is within %1$d miles</string>
+    <string name="dialog_title_radius">Near By Place</string>
+    <!--endregion-->
+</resources>
